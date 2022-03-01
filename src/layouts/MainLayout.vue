@@ -1,10 +1,10 @@
 <template>
-  <q-layout view="lHr lpR fFf">
+  <q-layout>
     <q-header bordered class="bg-white text-black">
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
-        <q-toolbar-title class="text-weight-bold">
+        <q-toolbar-title class="text-weight-bold" >
           <span class="gt-sm">  {{ $route.name}}</span>
           <q-icon class="q-pa-md lt-md header-icon" name="fas fa-dove" size="sm" color="primary" />
 
@@ -13,7 +13,7 @@
     </q-header>
 
     <q-drawer show-if-above v-model="leftDrawerOpen" side="left" :width="283" bordered>
-      <q-icon class="q-pa-md" name="fas fa-dove" size="lg" color="primary" />
+      <q-icon @click="toggleLeftDrawer" class="q-pa-md" name="fas fa-dove" size="lg" color="primary" />
       <q-list>
         <q-item to="/" exact clickable v-ripple>
           <q-item-section avatar>
@@ -87,6 +87,7 @@ export default {
   setup() {
     const leftDrawerOpen = ref(false)
     const rightDrawerOpen = ref(false)
+
 
     return {
       leftDrawerOpen,
