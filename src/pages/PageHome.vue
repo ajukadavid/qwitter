@@ -1,5 +1,7 @@
 <template>
-  <q-page>
+  <q-page class="relative-position">
+        <q-scroll-area class="absolute fullscreen">
+
     <div class="q-py-lg q-px-md row items-end q-col-gutter-md">
       <div class="col">
            <q-input
@@ -40,6 +42,12 @@
  />
 
  <q-list separator>
+      <transition-group
+  appear
+  enter-active-class="animated fadeIn slow"
+  leave-active-class="animated fadeOut slow"
+>
+
       <q-item
       v-for="qweet in qweets"
       :key="qweet.date"
@@ -58,6 +66,7 @@
             </strong>
             <span class="text-grey-7">
               @elderajuka
+             <br class="lt-md"> &bull;  {{relativeDate(qweet.date)}}
             </span>
           </q-item-label>
           <q-item-label class="qweet-content text-body1">
@@ -96,12 +105,10 @@
           </div>
         </q-item-section>
 
-        <q-item-section side top>
-         {{relativeDate(qweet.date)}} ago
-        </q-item-section>
       </q-item>
-
+</transition-group>
     </q-list>
+    </q-scroll-area>
   </q-page>
 </template>
 
@@ -118,23 +125,13 @@ export default defineComponent({
       qweets: [
         {
           content: `
-          Lorem, ipsum dolor sit amet consectetur
-          adipisicing elit. Quidem expedita ipsum
-          fugiat at quas dicta repellat veniam
-          perspiciatis porro iure. Voluptate
-          pariatur dicta nobis! Deleniti necessitatibus
-           blanditiis ex recusandae atque?
+        When we have respect for ourselves and others, we gravitate towards connections that encourage that
           `,
           date: 1646082317300
         },
          {
           content: `
-          Lorem, ipsum dolor sit amet consectetur
-          adipisicing elit. Quidem expedita ipsum
-          fugiat at quas dicta repellat veniam
-          perspiciatis porro iure. Voluptate
-          pariatur dicta nobis! Deleniti necessitatibus
-           blanditiis ex recusandae atque?
+          Anger is the ultimate destroyer of your own peace of mind
           `,
           date: 1646082356035
         }
