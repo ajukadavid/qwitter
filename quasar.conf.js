@@ -140,7 +140,7 @@ module.exports = configure(function (ctx) {
       manifest: {
         name: `Qwitter`,
         short_name: `Qwitter`,
-        description: `A Quasar Framework app`,
+        description: `A Twitter clone built by Ajuka David`,
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
