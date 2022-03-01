@@ -12,7 +12,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" :width="283" bordered>
+    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" :width="283" bordered mini :class="{'elevate': leftDrawerOpen}">
       <q-icon @click="toggleLeftDrawer" class="q-pa-md" name="fas fa-dove" size="lg" color="primary" />
       <q-list>
         <q-item to="/" exact clickable v-ripple>
@@ -109,5 +109,7 @@ export default {
   bottom: 0
   left: 50%
   transform: translateX(-50%)
+.elevate
+  z-index: 1
 
 </style>

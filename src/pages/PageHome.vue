@@ -1,5 +1,5 @@
 <template>
-  <q-page class="relative-position">
+  <q-page class="relative-position hide-behind" >
         <q-scroll-area class="absolute fullscreen">
 
     <div class="q-py-lg q-px-md row items-end q-col-gutter-md">
@@ -178,4 +178,7 @@ export default defineComponent({
 
 .qweet-icons
   margin-left: -5px
+
+.hide-behind
+  z-index: -1
 </style>
